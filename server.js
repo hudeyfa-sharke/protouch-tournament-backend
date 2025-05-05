@@ -2,16 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
-// Middleware setup (using your installed packages)
+// Middleware setup
 app.use(cors());
 app.use(bodyParser.json());
 
 // File paths
-const REGISTRATIONS_FILE = 'registrations.json';
-const CONFIG_FILE = 'config.json';
+const REGISTRATIONS_FILE = path.join(__dirname, 'registrations.json');
+const CONFIG_FILE = path.join(__dirname, 'config.json');
 
 // Initialize data
 let registrations = [];
@@ -86,8 +87,8 @@ function updateConfig(isOpen) {
   fs.writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
 }
 
-// Start server
-const PORT = 3000;
+// Start server on correct port for Render
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`Current registrations: ${registrations.length}/${config.maxTeams}`);
