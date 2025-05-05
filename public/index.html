@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROTOUCH TOURNAMENT - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-specific styles */
+    header {
+      background: #1e1e2f;
+      padding: 20px 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #00bfff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00bfff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 0;
+      margin-bottom: 40px;
+    }
+
+    .hero-image {
+      width: 500px;
+      max-width: 80%;
+      height: auto;
+      margin: 0 auto 30px;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      border: 2px solid #00bfff;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    /* Tournament Details Section */
+    .tournament-details {
+      margin: 40px auto;
+    }
+
+    .details-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .detail-card {
+      background: #1e1e2f;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .detail-card h3 {
+      color: #00bfff;
+      font-size: 1.4rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .detail-card ul {
+      padding-left: 20px;
+    }
+
+    .detail-card li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Features Section */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .card {
+      background: #1e1e2f;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Registration Status */
+    .registration-status {
+      margin: 15px 0;
+      font-weight: bold;
+      text-align: center;
+      min-height: 24px;
+    }
+    .status-open {
+      color: #00ff88;
+    }
+    .status-closed {
+      color: #ff4444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      border-top: 1px solid #2d2d3f;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-image {
+        width: 100%;
+        max-width: 350px;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="fade-in">
+    <nav class="container">
+      <div class="logo">PROTOUCH TOURNAMENT</div>
+      <div class="nav-links">
+        <a href="REGISTER.HTML">Register</a>
+        <a href="PROTOUCH.HTML">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero fade-in">
+      <img src="protouch.png" class="hero-image" alt="Tournament Banner">
+      <div class="hero-content">
+        <h1>Welcome to Protouch Tournament</h1>
+        <p class="tagline">Compete against the best for glory and amazing prizes</p>
+        
+        <!-- Registration Status Display -->
+        <div id="registration-status" class="registration-status"></div>
+        <a href="REGISTER.HTML" id="register-btn" class="btn primary-btn">Register Your Team</a>
+      </div>
+    </section>
+
+    <section class="prize-banner fade-in">
+      <h2>💰 Grand Prize: Ksh 100,000</h2>
+      <p>Paid to the tournament champion</p>
+    </section>
+
+    <section class="tournament-details fade-in">
+      <div class="details-container">
+        <div class="detail-card">
+          <h3><span>📍</span> Venue & Schedule</h3>
+          <ul>
+            <li><strong>Location:</strong> Kongoni Indoor Soccer Arena, Nairobi</li>
+            <li><strong>Date:</strong> Saturday, June 1st, 2025</li>
+            <li><strong>Kick-off:</strong> 9:00 AM sharp</li>
+            <li><strong>Format:</strong> Group Stage + Knockout Rounds</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h3><span>📝</span> Team Registration</h3>
+          <ul>
+            <li><strong>👥 Teams:</strong> Max 10 players</li>
+            <li><strong>🎯 Slots:</strong> 16 teams only</li>
+            <li><strong>💵 Fee:</strong> Ksh 5,000 per team</li>
+            <li><strong>📲 Payment:</strong> MPESA Till 123456</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <h2 class="fade-in">Tournament Features</h2>
+      <div class="features">
+        <div class="card fade-in" style="animation-delay: 0.2s">
+          <h3>🏆 Competitive Play</h3>
+          <p>Test your skills against top teams in professionally organized matches.</p>
+        </div>
+        <div class="card fade-in" style="animation-delay: 0.4s">
+          <h3>📅 Organized Schedule</h3>
+          <p>Clear timelines and professional referees for all matches.</p>
+        </div>
+        <div class="card fade-in" style="animation-delay: 0.6s">
+          <h3>⚖️ Fair Rules</h3>
+          <p>Transparent rules and regulations for all participants.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <div class="container">
+      <p>&copy; 2025 Protouch Tournament. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced Registration Status Check
+    document.addEventListener('DOMContentLoaded', function() {
+      // First check local config
+      fetch("config.json")
+        .then(response => {
+          if (!response.ok) throw new Error("Config not found");
+          return response.json();
+        })
+        .then(config => {
+          // Then verify with server
+          return fetch('http://localhost:3000/registration-status')
+            .then(serverResponse => {
+              if (!serverResponse.ok) throw new Error("Server unavailable");
+              return serverResponse.json();
+            })
+            .then(serverData => {
+              return {
+                config: config,
+                serverData: serverData
+              };
+            });
+        })
+        .then(({config, serverData}) => {
+          const registerBtn = document.getElementById('register-btn');
+          const statusDisplay = document.getElementById('registration-status');
+          
+          const isOpen = config.registrationOpen && (serverData.remainingSlots > 0);
+          
+          if (!isOpen) {
+            statusDisplay.textContent = "🚫 Registration Closed - All 16 slots filled";
+            statusDisplay.className = "registration-status status-closed";
+            registerBtn.textContent = "Registration Closed";
+            registerBtn.classList.remove('primary-btn');
+            registerBtn.classList.add('secondary-btn');
+            registerBtn.style.pointerEvents = "none";
+            registerBtn.href = "#";
+          } else {
+            statusDisplay.textContent = `✅ ${serverData.remainingSlots} of 16 slots remaining`;
+            statusDisplay.className = "registration-status status-open";
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          const statusDisplay = document.getElementById('registration-status');
+          statusDisplay.textContent = "⚠️ System temporarily unavailable";
+          statusDisplay.className = "registration-status status-closed";
+        });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const registerBtn = document.getElementById('register-btn');
+      const statusDisplay = document.getElementById('registration-status');
+      
+      // 1. First try to contact backend
+      fetch('http://localhost:3000/registration-status')
+        .then(response => {
+          if (!response.ok) throw new Error('Server error');
+          return response.json();
+        })
+        .then(data => {
+          updateUI(data.remainingSlots);
+        })
+        .catch(error => {
+          console.log('Falling back to config.json');
+          // 2. Fallback to local config
+          fetch("config.json")
+            .then(r => r.json())
+            .then(config => {
+              const remaining = config.maxTeams - config.currentTeams;
+              updateUI(remaining);
+            })
+            .catch(e => {
+              showError();
+            });
+        });
+    
+      function updateUI(remainingSlots) {
+        if (remainingSlots <= 0) {
+          statusDisplay.innerHTML = "🚫 <strong>Registration Closed</strong> (16/16 teams)";
+          statusDisplay.className = "registration-status status-closed";
+          registerBtn.textContent = "Registration Closed";
+          registerBtn.disabled = true;
+        } else {
+          statusDisplay.innerHTML = `✅ <strong>${remainingSlots} slots remaining</strong> of 16`;
+          statusDisplay.className = "registration-status status-open";
+        }
+      }
+    
+      function showError() {
+        statusDisplay.innerHTML = "⚠️ <strong>System Updating</strong> - Try again later";
+        statusDisplay.className = "registration-status status-closed";
+        registerBtn.disabled = true;
+      }
+    });
+    </script>
+</body>
+</html>

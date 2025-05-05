@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Registration</title>
+  <style>
+    body {
+      background: #121212;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      color: #f0f0f0;
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: #1e1e2f;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      animation: fadeSlideIn 1.2s ease;
+    }
+
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      background: #2d2d3f;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #00bfff;
+      box-shadow: 0 0 8px #00bfff66;
+      background: #34344a;
+    }
+
+    input:hover {
+      background: #383854;
+    }
+
+    p {
+      font-size: 14px;
+      background: #2a2a3a;
+      padding: 10px;
+      border-left: 4px solid #00bfff;
+    }
+
+    .players {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .players div {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    button {
+      background: #00bfff;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #009edc;
+      box-shadow: 0 0 10px #00bfff88;
+      transform: scale(1.03);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 25px;
+    }
+    
+    #successMessage {
+      display: none;
+      color: #00ff88;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    #errorMessage {
+      display: none;
+      color: #ff4444;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRIZE BANNER -->
+  <section style="text-align: center; background: #1e1e2f; padding: 20px; border-radius: 10px; margin-bottom: 30px; animation: fadeSlideIn 1s ease;">
+    <h2 style="color: #00ff88; margin: 0;">💰 Grand Prize: Ksh 100,000</h2>
+    <p style="color: #ccc; margin-top: 8px;">Paid to the tournament champion.</p>
+  </section>
+
+  <!-- FORM SECTION -->
+  <div id="registrationForm">
+    <form id="teamRegistrationForm">
+      <h2>Team Registration Form</h2>
+
+      <fieldset>
+        <legend><strong>Team Details</strong></legend>
+        <label>Team Name:
+          <input type="text" name="team_name" required>
+        </label>
+        <label>Manager Name:
+          <input type="text" name="manager_name" required>
+        </label>
+        <label>Phone Number:
+          <input type="tel" name="phone" required>
+        </label>
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>Payment Information</strong></legend>
+        <p>Pay <strong>Ksh 5,000</strong> to MPESA Till <strong>123456</strong> before registering.
+          Enter the code you received after payment.</p>
+
+        <label>MPESA Transaction Code:
+          <input type="text" name="mpesa_code" required>
+        </label>
+        <label>MPESA Number Used (if different):
+          <input type="tel" name="mpesa_phone">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>Player List (Max 10)</strong></legend>
+        <div class="players">
+          <div>
+            <input type="text" name="player1" placeholder="Player 1" required>
+            <input type="text" name="player2" placeholder="Player 2" required>
+            <input type="text" name="player3" placeholder="Player 3" required>
+            <input type="text" name="player4" placeholder="Player 4" required>
+            <input type="text" name="player5" placeholder="Player 5" required>
+          </div>
+          <div>
+            <input type="text" name="player6" placeholder="Player 6">
+            <input type="text" name="player7" placeholder="Player 7">
+            <input type="text" name="player8" placeholder="Player 8">
+            <input type="text" name="player9" placeholder="Player 9">
+            <input type="text" name="player10" placeholder="Player 10">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-footer">
+        <button type="submit">Submit Registration</button>
+      </div>
+    </form>
+    
+    <div id="successMessage">
+      <h2>Registration Successful! 🎉</h2>
+      <p>Your team has been registered for the tournament.</p>
+    </div>
+    
+    <div id="errorMessage">
+      <h2>Registration Failed</h2>
+      <p id="errorText"></p>
+    </div>
+  </div>
+
+  <!-- CLOSED MESSAGE -->
+  <div id="closedMessage" style="display: none; text-align: center; margin-top: 50px;">
+    <h2 style="color: #ff4444;">Registration Closed</h2>
+    <p>Sorry, team registration is now closed. Please contact the organizers for more information.</p>
+  </div>
+
+  <!-- JavaScript to Load Config and Handle Form Submission -->
+  <script>
+    // Check registration status
+    fetch("config.json")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Could not load config.json");
+        }
+        return response.json();
+      })
+      .then(config => {
+        const formSection = document.getElementById("registrationForm");
+        const closedSection = document.getElementById("closedMessage");
+
+        if (config.registrationOpen && config.currentTeams < config.maxTeams) {
+          formSection.style.display = "block";
+          closedSection.style.display = "none";
+        } else {
+          formSection.style.display = "none";
+          closedSection.style.display = "block";
+        }
+      })
+      .catch(error => {
+        console.error("Error loading config:", error);
+      });
+
+    // Handle form submission
+    document.getElementById("teamRegistrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const form = e.target;
+      const formData = new FormData(form);
+      const formObject = {};
+      
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+      
+      fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formObject)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Show success message
+          form.style.display = "none";
+          document.getElementById("successMessage").style.display = "block";
+          
+          // Optional: Reset form after delay
+          setTimeout(() => {
+            form.style.display = "block";
+            document.getElementById("successMessage").style.display = "none";
+            form.reset();
+          }, 5000);
+        } else {
+          // Show error message
+          document.getElementById("errorText").textContent = data.error || "An unknown error occurred";
+          document.getElementById("errorMessage").style.display = "block";
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("errorText").textContent = "Failed to connect to server";
+        document.getElementById("errorMessage").style.display = "block";
+      });
+    });
+  </script>
+
+</body>
+</html>

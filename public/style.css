@@ -1,0 +1,198 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+  
+  /* ===== LAYOUT ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2, h3 {
+    color: #00ff88;
+    margin-top: 0;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #00ff88;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* ===== HEADER & NAVIGATION ===== */
+  header {
+    background: #1e1e2f;
+    padding: 20px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00bfff;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #00bfff;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+  }
+  
+  .hero-image {
+    width: 500px; /* Fixed width */
+    max-width: 80%; /* Responsive fallback */
+    height: auto;
+    margin: 0 auto 25px;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,191,255,0.3);
+    border: 2px solid #00bfff;
+  }
+  
+  .tagline {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  /* ===== COMPONENTS ===== */
+  /* Prize Banner */
+  .prize-banner {
+    background: #1e1e2f;
+    color: #00ff88;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  .primary-btn {
+    background: #00ff88;
+    color: #121212;
+  }
+  
+  .primary-btn:hover {
+    background: #00cc6f;
+    transform: translateY(-2px);
+  }
+  
+  .secondary-btn {
+    background: #00bfff;
+    color: white;
+  }
+  
+  .secondary-btn:hover {
+    background: #009edc;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  }
+  
+  /* Cards */
+  .card {
+    background: #1e1e2f;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Features Grid */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+  }
+  
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid #2d2d3f;
+  }
+  
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+  @media (max-width: 768px) {
+    .hero-image {
+      width: 100%;
+      max-width: 350px;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+    }
+    
+    .nav-links {
+      gap: 15px;
+    }
+  }
